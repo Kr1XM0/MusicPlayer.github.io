@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Music-Player</title>
+</head>
+<body>
+    <main>
+        <div class="img-container">
+            <img class="song-img" src="music/cover-1.png" alt="">
+        </div>
+        <div class="info-container">
+            <h3 class="song-title">Forest Lullaby</h3>
+            <small>Cosmo Sheldrake</small>
+        </div>
+        <div class="progress-container">
+            <small class="contadorLeft">00:00</small>
+            <small class="contadorRight">02:18</small>
+            <audio id="song" src="music/forest-lullaby-110624.mp3"></audio>
+            <progress id="song-progress" value="0" max="100"></progress>
+        </div>
+        <div class="btns-container">
+            <button id="btnBack"><img src="img/Stop_and_play_fill-1.svg" alt=""></button>
+            <button id="btnStart"><img src="img/Play_fill.svg" alt=""></button>
+            <button id="btnNext"><img src="img/Stop_and_play_fill.svg" alt=""></button>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

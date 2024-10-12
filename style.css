@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+main {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #121826a6;
+    border-radius: 15px;
+    padding: 25px;
+}
+.img-container {
+    width: 350px;
+    height: 350px;
+}
+.img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+.info-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.info-container h3 {
+    color: #E5E7EB;
+}
+small {
+    color: #4D5562;
+}
+.progress-container {
+    position: relative;
+    width: 100%;
+}
+.progress-container small {
+    position: absolute;
+    top: -7px;
+}
+.contadorRight {
+    right: 0;
+}
+#song-progress {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+  /* Personalizar el área de la barra */
+progress::-webkit-progress-value {
+    background-color: #C93B76;
+    box-shadow: 0 0 10px #C93B76;
+    border-radius: 2px;
+    transition: width 0.2s ease-out;
+} 
+  /* Estilos para Firefox */
+@-moz-document url-prefix() {
+progress::-moz-progress-bar {
+    background-color: #C93B76;
+    box-shadow: 0 0 10px #C93B76;
+    border-radius: 2px;
+    transition: width 0.2s ease-out;
+    }
+}
+.btns-container {
+    margin-top: 40px;
+}
+#btnStart {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #C93B76;
+    box-shadow: 0 0 10px #C93B76;
+    text-align: center;
+    margin: 0 20px;
+}
+#btnBack {
+    background: none;
+    border: none;
+}
+#btnNext {
+    background: none;
+    border: none;
+}
+@media (max-width: 500px){
+    main {
+        width: 90%;
+        justify-content: space-around;
+    }
+    .img-container {
+        width: 100%;
+        height: auto;
+    }
+}
