@@ -22,8 +22,8 @@ function nextSong(){
     song.addEventListener('loadedmetadata', () => {
         document.querySelector('.song-img').src = MUSIC[actuallySong][1]
         document.querySelector('.song-title').innerText = MUSIC[actuallySong][2]
+        progress.max = song.duration
         countRight()
-        play()
     });
 }
 btnBack.addEventListener('click',function(){
@@ -34,8 +34,8 @@ btnBack.addEventListener('click',function(){
     song.addEventListener('loadedmetadata', () => {
         document.querySelector('.song-img').src = MUSIC[actuallySong][1]
         document.querySelector('.song-title').innerText = MUSIC[actuallySong][2]
+        progress.max = song.duration
         countRight()
-        play()
     });
 })
 
@@ -43,10 +43,19 @@ btnBack.addEventListener('click',function(){
 let advance
 btnStart.addEventListener('click', play)
 
+let lordIcon = document.querySelector('#lordIcon')
+btnStart.addEventListener('click',cambiarIcono)
+function cambiarIcono(){
+    lordIcon.playerInstance.play()
+    setTimeout(function(){
+        lordIcon.playerInstance.direction = lordIcon.playerInstance.direction == 1 ? -1 : 1
+    },1000)
+}
+
 function play(){
     if(song.paused){
         song.play()
-        progress.max = song.duration
+        song.autoplay = true
         advance = setInterval(() => {
             if(progress.value < progress.max){
                 progress.value = song.currentTime
@@ -55,6 +64,7 @@ function play(){
             }
         }, 1000)
     } else {
+        song.autoplay = false
         clearInterval(advance)
         song.pause()
     }
